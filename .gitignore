@@ -1,5 +1,5 @@
-
-# Byte-compiled / optimized / DLL files
+*.pyc
+*~
 __pycache__/
-
 /static_local
+.DS_Store
