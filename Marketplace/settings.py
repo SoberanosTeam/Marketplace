@@ -38,12 +38,20 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
 
     #our apps
     'carts',
     'products',
     'search',
     'tags',
+
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+
+
+    "crispy_forms",
 ]
 
 MIDDLEWARE = [
@@ -82,12 +90,14 @@ WSGI_APPLICATION = 'Marketplace.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': os.environ.get('DB_NAME', 'Doceria'),
-        'USER': os.environ.get('DB_USER', 'postgres'),
-        'PASSWORD': os.environ.get('DB_PASS', '123456'),
-        'HOST': 'localhost',
-        'PORT': '5432',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+        #'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        #'NAME': os.environ.get('DB_NAME', 'Doceria'),
+        #'USER': os.environ.get('DB_USER', 'postgres'),
+        #'PASSWORD': os.environ.get('DB_PASS', '123456'),
+        #'HOST': 'localhost',
+        #'PORT': '5432',
     }
 }
 
@@ -135,3 +145,29 @@ STATICFILES_DIRS = [
 STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static_cdn", "static_root")
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), "Marketplace/static_cdn", "media_root")
+
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
+]
+
+SITE_ID = 1
+#Pronto, agora você será redirecionado para a página inicial em vez da /accounts/profile/.
+LOGIN_REDIRECT_URL = "/"
+
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+
+CRISPY_TEMPLATE_PACK = "bootstrap4"
+
+#ACCOUNT_SESSION_REMEMBER = True
+
+# Só precisa digitar a senha uma vez
+ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = False
+# Não precisa de username
+ACCOUNT_USERNAME_REQUIRED = False
+# Método de autenticação: email
+ACCOUNT_AUTHENTICATION_METHOD = "email"
+# Email obrigatório
+ACCOUNT_EMAIL_REQUIRED = True
+# Email único
+ACCOUNT_UNIQUE_EMAIL = True
