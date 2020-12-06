@@ -28,6 +28,7 @@ urlpatterns = [
     path('search/', include("search.urls", namespace="search")),
     path('admin/', admin.site.urls),
     path('accounts/', include('allauth.urls')),
+    path('users/', include('users.urls')),
 ]
 
 if settings.DEBUG:
