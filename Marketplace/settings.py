@@ -50,8 +50,10 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
 
-
     "crispy_forms",
+
+    # local apps
+    "users.apps.UsersConfig",
 ]
 
 MIDDLEWARE = [
@@ -171,3 +173,7 @@ ACCOUNT_AUTHENTICATION_METHOD = "email"
 ACCOUNT_EMAIL_REQUIRED = True
 # Email único
 ACCOUNT_UNIQUE_EMAIL = True
+
+# User Model
+
+AUTH_USER_MODEL = "users.Usuario"
