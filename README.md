@@ -1,6 +1,8 @@
-Neste repositório consta a implementação de um website, de uma doceria popular com os produtos que produz, para teste neste repositório contem o arquivo **db.sqlite3** que é o banco de dados utilizados com as informações.
+Neste repositório consta a implementação de um website, de uma doceria popular com os produtos que produz, para teste neste link **http://soberanosteam.pythonanywhere.com/** se consegue o acesso, para a visualização de produtos e como está funcionado sem a necessidade do servidor rodando.
 
-Para funcionamento do website via servidor local siga as seguintes informações:
+Produtos cadastrados no pythonanywhere apenas para testes de visualização.
+
+Para funcionamento do website via servidor local **(http://127.0.0.1:8000/)** siga as seguintes informações:
 
  1.º Passo
 Crie uma pasta no seu computador, apos isto vai usar o seu **CMD**, entrar na pasta criada e usar o seguindo comando.
@@ -39,16 +41,27 @@ Deixando neste Diretório **(..\Sua pasta\Marketplace)** e em seguida execute
 Para instalar as dependências que serão utilizadas.
 
  5.º Passo
+Continuando no diretorio **(..\Sua pasta\Marketplace)** e concluido os passos anteriores, se é necessario 2 comandos para o website funcionar normalmente, o migrate e createsuperuser.
+
+    python manage.py migrate
+
+Este comando vai criar o banco de dados sql para o mesmo funcionar corretamente, após este comando executar o createsuperuser.
+
+    python manage.py createsuperuser
+
+Com esse comando vamos criar o usuario e senha para acessar a parte administrativa do website.
+
+ 6.º Passo
 Neste passo vamos enfim iniciar o servidor (web), vamos executar o comando no **CMD**, se certificando que estamos no caminho **..\Sua pasta\Marketplace**, estando nesta pasta bastar executar 
 
     python manage.py runserver
 
 Agora seu servidor estará pronto para uso.
 
- 6.º Passo
-Com o servidor rodando o acesso é feito através do link **http://127.0.0.1:8000/** , por este repositório conter um banco de dados vai ter alguns dados para o usuário ter uma melhor visualização do projeto.
+ 7.º Passo
+Com o servidor rodando o acesso é feito através do link **http://127.0.0.1:8000/** , para acessar a parte administrativa do website, basta acessar **http://127.0.0.1:8000/admin** e colocar seu acesso criado no passo 5, após isso se tem acesso a todas as informações, como perfil do usuario e o cadastro dos produtos, tags e outros serviços.
 
-Produtos cadastrados apenas para testes de execução.
+Para uma visualização melhor sem precisar fazer todos os passos anteriores só acessar link o **http://soberanosteam.pythonanywhere.com/**.
 
 Este projeto pode ser conferido no repositório do Github abaixo:
 
