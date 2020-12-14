@@ -4,13 +4,18 @@
 {% url 'login' as login_url %}
 {% url 'logout' as logout_url %}
 {% url 'register' as register_url %}
+{% url 'about' as about_page %}
+{% url 'cart' as cart_home %}
+
+{% load static %}
+
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-3">
   <div class='container'>
     <a class="navbar-brand" href="{{ home_url }}">
       <img src="https://lh3.googleusercontent.com/FNEQBKkePPPWR_ecVU2iZHfxiwp-JEBak0Gt4kVrHGUTkvpIGKNnvQSczpUn1HMNbR9fr0IqCOnyKcneRA=w1080-h608-p-no-v0" width="30" height="30" class="d-inline-block align-top" alt="">
       {% if nome_da_marca %} 
       {{ nome_da_marca }} 
-      {% else %} C&oacute;digo Fluente eCommerce 
+      {% else %} Sem titulo
       {% endif %}
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -39,17 +44,26 @@
           <a class="nav-link" href="{{ register_url }}">Registrar-se</a> 
         </li>
       {% endif %}
-        <li class="nav-item dropdown">
+        <li class="nav-item dropdown {% if request.path == about_page %} active {% endif %}">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown link
+          Outras opções
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <a class="dropdown-item" href="#">Something else here</a>
+          <a class="dropdown-item" href="{{ about_page }}">Sobre o projeto</a>
+          <!--<a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item" href="#">Something else here</a>-->
           </div>
         </li>
       </ul>
+      <!-- Right -->
+      <ul class="navbar-nav nav-flex-icons">
+        <li class="nav-item">
+          <a href="{{ cart_home }}" class="nav-link waves-effect">
+            <span class="badge red z-depth-1 mr-1"> {{ carts_cart_count }} </span>
+            <i class="fas fa-shopping-cart"></i>
+            <img src="{% static 'img/carrinho.png' %}" width="30" height="30" class="clearfix d-none d-sm-inline-block"> Carrinho </span>
+          </a>
+        </li>
       {% include 'search/snippets/search-form.html' %}
     </div>
   </div><!--fim container-->

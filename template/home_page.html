@@ -10,23 +10,34 @@
 {% block content %}
     <!-- Aqui vai tudo que é referente a home_page  -->
     <div class='text-center'>
-        <h1>{{ title }}</h1>
-        <p>{{ content }}</p>
+        <!--<p>{{ content }}</p>-->
     </div>
-    <div class='container'>
+    {% if request.user.is_authenticated %}
         <div class='row'>
             <div class='col'>
-                <img src="{% static 'img/logo.png' %}" class='img-fluid' />
-                <p>{{ content }}</p> 
-            </div>
-        </div>
-        {% if request.user.is_authenticated %}
-        <div class='row'>
-            <div class='col'>
-                <h1>Premium</h1>
-                <p>{{ premium_content }}</p>
+                <font color="black"><h1>Seja bem vindo(a)</h1> </font>
+                <font color="black"> {{ premium_content }} </font>
             </div>
         </div>
         {% endif %}
+    <div class='container'>
+        <div class='row'>
+            <div class='col'>
+                <center><img src="{% static 'img/logo.png' %}" class='img-fluid' width=413 height=413/>
+            </div>
+        </div>
+    </div>
+    <div class='row'>
+        {% for obj in object_list %}
+            <div class='col'>
+            {% include 'products/snippets/card.html' with instance=obj %}
+            {% if forloop.counter|divisibleby:3 %}
+                </div><!--close the row--></div><!--close the col--><div class='row'><div class='col-12'><hr/></div>
+            {% elif forloop.counter|divisibleby:3 %}
+                </div><!--close the row--></div><!--close the col--><div class='row'><div class='col-12'><hr/></div>
+            {% else %}
+                </div>
+            {% endif%}
+        {% endfor%}
     </div>
 {% endblock %}

@@ -11,7 +11,7 @@ def home_page(request):
                     "content": "Bem vindo a página inicial",
               }
     if request.user.is_authenticated:
-        context["premium_content"] = "Você é um usuário Premium"
+        context["premium_content"] = "Você é um usuário cadastrado"
     return render(request, "home_page.html", context)
 
 def about_page(request):
@@ -51,7 +51,7 @@ def login_page(request):
             login(request, user)
             print("Login válido")
             # Redireciona para uma página de sucesso.
-            return redirect("/")
+            return redirect("../products/")
         else:
             #Retorna uma mensagem de erro de 'invalid login'.
             print("Login inválido")

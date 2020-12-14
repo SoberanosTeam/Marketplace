@@ -6,10 +6,11 @@
         <div class='col'>
             <h1>{{ object.title }}</h1>
             {{ object.timestamp|timesince }} atrás
-            <h3>{{ "Um título qualquer"|title }}</h3>
+            <!--<h3>{{ "Um título qualquer"|title }}</h3>-->
             {{ object.description|linebreaks }} 
+            <p><b>Preço: R$ {{ object.price }} </b></p>
             {% if object.image %}
-                <img src='{{ object.image.url }}' class='img-fluid'/>
+                <center><img src='{{ object.image.url }}' class='img-fluid'width=300 height=250/>
             {% endif %}
         </div>
     </div>
