@@ -1,4 +1,4 @@
-Neste repositório consta a implementação de um website, de uma doceria popular com os produtos que produz, para teste neste link **http://soberanosteam.pythonanywhere.com/** se consegue o acesso, para a visualização de produtos e como está funcionado sem a necessidade do servidor rodando.
+Neste repositório consta a implementação de um website, de uma doceria popular com os produtos que produz, para teste neste link **http://soberanosteampa.pythonanywhere.com/** se consegue o acesso, para a visualização de produtos e como está funcionado sem a necessidade do servidor rodando.
 
 Produtos cadastrados no pythonanywhere apenas para testes de visualização.
 
@@ -61,10 +61,27 @@ Agora seu servidor estará pronto para uso.
  7.º Passo
 Com o servidor rodando o acesso é feito através do link **http://127.0.0.1:8000/** , para acessar a parte administrativa do website, basta acessar **http://127.0.0.1:8000/admin** e colocar seu acesso criado no passo 5, após isso se tem acesso a todas as informações, como perfil do usuario e o cadastro dos produtos, tags e outros serviços.
 
-Para uma visualização melhor sem precisar fazer todos os passos anteriores só acessar link o **http://soberanosteam.pythonanywhere.com/**.
+Para uma visualização melhor sem precisar fazer todos os passos anteriores só acessar link o **http://soberanosteampa.pythonanywhere.com/**.
 
 Este projeto pode ser conferido no repositório do Github abaixo:
 
 https://github.com/SoberanosTeam/Marketplace
 
 	**Projeto realizado pela organização SoberanosTeam composta por Davi Chagas Silva, Francisco Vitor Felix de Aquino, Jefter Roberto Mota Targino e Veridiano Francisco da Silva, todos os alunos de Ciência da Computação, da disciplina de Programação Avançada do 5º período da UERN - Campus Central, ministrada pelo professor Alysson Mendes de Oliveira.**
+
+O que está funcionando:
+- Login
+- Cadastro
+- Cadastro de produtos
+- Vitrine
+- Detalhes do produto
+- Página de contato
+- Página "Sobre o Projeto"
+- Busca por produtos
+- Perfil do Usuário (Por enquanto, somente no painel admin.)
+
+O que não está funcionando:
+- Adicionar produto no carrinho
+
+Implementações futuras:
+- Realizar pagamentos
