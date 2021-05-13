@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <main>
+    <div class="container">
+
+    <div class="table-responsive text-nowrap">
+    <h2>Carrinho</h2>
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            {% for cart in cart_obj %}
+                {{ cart_pro }}
+            {% endfor %}
+            <th scope="col">Produto</th>
+            <th scope="col">Preço</th>
+            <th scope="col">Quantidade</th>
+            <th scope="col">Preço total dos produtos</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+                
+            <td colspan='5'>O carrinho está vazio</td>
+        </tr>
+        <!--
+        <tr>
+            <td colspan="5">
+            <a class='btn btn-primary float-right' href='/'>Continue shopping</a>
+            </td>
+        </tr>-->
+        <tr>
+            <td colspan="5">
+            <a class='btn btn-warning float-right ml-2' href='#'>Seguir para pagamento</a>
+            <a class='btn btn-primary float-right' href='/products/'>Continue comprando</a>
+            
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    </div>
+
+    </div>
+  </main>
+
+{% endblock content %}
+
+
